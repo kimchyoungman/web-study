@@ -1,0 +1,83 @@
+p * {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: brown;
+}
+
+/* h1 {
+    color: tomato;
+    text-decoration: overline;
+} */
+
+h1.intro{
+color: tomato;
+text-decoration: overline;
+}
+
+h1.outro{
+color:tan;
+text-decoration: underline;
+}
+
+p { background-color:black ;}
+
+.webp {
+    background-color: rgb(126, 118, 118);
+}
+
+#mt {
+    background-color: cyan;
+    text-decoration: line-through;
+}
+/* 
+div > p {
+    font-weight: bold;
+}
+
+img[alt] {
+    color: red;
+}
+
+img[alt='N/A'] {
+    color:aqua;
+}
+
+a:link{
+    color: hotpink;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: hotpink;
+    color: white;
+}
+
+input:focus{
+    background-color: cyan;
+} */
+
+/* ul li:first-child{ text-decoration: line-through red double;}
+ul li:nth-child(2n){ text-decoration: line-through red double;} */
+/* ul li:nth-child(even){ text-decoration: line-through red double;} */
+/* ul li:nth-of-type(even){ text-decoration: line-through red double;} */
+
+/* 테이블 꾸미기 과제1 */
+/* table td:nth-child(2n+1){
+    background-color: skyblue;
+    font-weight: bold;
+} */
+
+/* 테이블 꾸미기 과제2 */
+/* table tr:nth-child(2n+1) td:nth-child(2n+1){
+    background-color: skyblue;
+}
+table tr:nth-child(2n) td:nth-child(2n){
+    background-color: skyblue;
+}
+
+table tr:nth-child(2n) td:nth-child(2n+1){
+    background-color: beige;
+}
+table tr:nth-child(2n+1) td:nth-child(2n){
+    background-color: beige;
+} */
