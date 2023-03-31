@@ -1,0 +1,17 @@
+fieldset {
+    width: 700px;
+    height: auto;
+    margin: auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+}
+
+fieldset .Login {
+    float: right;
+    cursor: pointer;
+    margin: -43px 0px 0 0px;
+}
+
