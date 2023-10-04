@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="quiz.css" />
+        <script>
+            // 각 문제를 해결하기 위한 함수를 구현하시오
+            // 문제 1번을 해결하기 위한 함수의 이름: sol1()
+            // 문제 2번을 해결하기 위한 함수의 이름: sol2()
+            // ...
+
+            function sol1() {
+                let number1 = Number(document.getElementById("num1").value);
+                let number2 = Number(document.getElementById("num2").value);
+                let result = number1 + number2;
+                document.getElementById("txt").value = result;
+            }
+
+            function sol2() {
+                let number1 = Number(document.getElementById("num1").value);
+                let number2 = Number(document.getElementById("num2").value);
+                if (number1 > number2) {
+                    document.getElementById("txt").value = number1;
+                } else if (number1 < number2) {
+                    document.getElementById("txt").value = number2;
+                } else {
+                    document.getElementById("txt").value =
+                        "The two numbers are the same";
+                }
+            }
+
+            function sol3() {
+                let Array = document.getElementById("txt").value.split(" ");
+                let wordCounts = {};
+                let output = [];
+
+                for (let i = 0; i < Array.length; i++) {
+                    let word = Array[i];
+                    if (wordCounts[word]) {
+                        wordCounts[word]++;
+                    } else {
+                        wordCounts[word] = 1;
+                    }
+                }
+
+                for (let word in wordCounts) {
+                    if (wordCounts[word] === 1) {
+                        output.push(word);
+                    }
+                }
+
+                let final = output.join("<br>");
+
+                document.getElementById("answer").innerHTML = final;
+            }
+
+            function sol4() {
+                let Num = Number(document.getElementById("num1").value);
+                let text = document.getElementById("txt").value;
+
+                let output = [];
+                for (let i = 0; i < Num; i++) {
+                    output.push(text);
+                }
+                console.log(Num);
+                console.log(typeof text);
+                console.log(output);
+                document.getElementById("answer").innerHTML =
+                    output.join("<br>");
+            }
+
+            function sol5() {
+                if (
+                    document.getElementById("num1").style.visibility == "hidden"
+                ) {
+                    document.getElementById("num1").style.visibility =
+                        "visible";
+                    document.getElementById("num2").style.visibility =
+                        "visible";
+                    document.getElementById("txt").style.visibility = "visible";
+                } else {
+                    document.getElementById("num1").style.visibility = "hidden";
+                    document.getElementById("num2").style.visibility = "hidden";
+                    document.getElementById("txt").style.visibility = "hidden";
+                }
+            }
+
+            function sol6() {
+                const ul = document.getElementsByTagName("ul")[0];
+                const currentColor = ul.style.color;
+
+                switch (currentColor) {
+                    case "black":
+                        ul.style.color = "red";
+                        break;
+                    case "red":
+                        ul.style.color = "orange";
+                        break;
+                    case "orange":
+                        ul.style.color = "yellow";
+                        break;
+                    case "yellow":
+                        ul.style.color = "green";
+                        break;
+                    case "green":
+                        ul.style.color = "blue";
+                        break;
+                    case "blue":
+                        ul.style.color = "navy";
+                        break;
+                    case "navy":
+                        ul.style.color = "purple";
+                        break;
+                    case "purple":
+                        ul.style.color = "red";
+                        break;
+                    default:
+                        ul.style.color = "black";
+                        break;
+                }
+            }
+
+            let rainbowCount = 0;
+            function sol6() {
+                let button = document.getElementsByTagName("ul")[0];
+                let color = [
+                    "red",
+                    "orange",
+                    "gold",
+                    "green",
+                    "blue",
+                    "navy",
+                    "purple",
+                ];
+
+                button.style.color = color[rainbowCount % color.length];
+                rainbowCount += 1;
+            }
+
+            function sol7() {
+                let obj = document.createElement("div");
+                let body = document.getElementsByTagName("body")[0];
+                obj.innerText = "Assignment #6";
+                obj.style.border = "red double 3px";
+                obj.style.fontSize = "2em";
+                obj.style.width = "520px";
+                obj.style.height = "100px";
+                obj.style.backgroundColor = "beige";
+                obj.id = "obj";
+
+                if (body) {
+                    let existingObj = document.getElementById("obj");
+                    if (existingObj) {
+                        body.removeChild(existingObj);
+                    } else {
+                        body.insertBefore(obj, body.firstChild);
+                    }
+                }
+            }
+
+            function sol8() {
+                let num1 = document.getElementById("num1").value;
+                let num2 = document.getElementById("num2").value;
+
+                let img = document.createElement("img");
+                img.src = "logo.png";
+
+                // img.style.width = "100%"
+                // img.style.height = "100%"
+
+                // let first_width = document.getElementById("answer").
+                // document.getElementById("num1").value = first_width
+                img.style.width = num1 + "px";
+                img.style.height = num2 + "px";
+
+                let answer = document.getElementById("answer");
+                answer.appendChild(img);
+            }
+
+            function sol9() {
+                let img = document.createElement("img");
+                img.src = "logo.png";
+                img.style.position = "absolute";
+
+                let answer = document.getElementById("answer");
+                answer.style.position = "relative";
+                answer.appendChild(img);
+
+                document.addEventListener("keydown", function (event) {
+                    let text = document.getElementById("txt");
+                    let answer = document.getElementById("answer");
+                    let img = answer.querySelector("img");
+
+                    switch (event.keyCode) {
+                        case 37:
+                            img.style.left =
+                                parseInt(img.style.left || 0) - 10 + "px";
+                            text.value = "Left!";
+                            break;
+                        case 38:
+                            img.style.top =
+                                parseInt(img.style.top || 0) - 10 + "px";
+                            text.value = "Up!";
+                            break;
+                        case 39:
+                            img.style.left =
+                                parseInt(img.style.left || 0) + 10 + "px";
+                            text.value = "Right!";
+                            break;
+                        case 40:
+                            img.style.top =
+                                parseInt(img.style.top || 0) + 10 + "px";
+                            text.value = "Down!";
+                            break;
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <p>
+            Number 1:
+            <input id="num1" type="number" />
+        </p>
+        <p>
+            Number 2:
+            <input id="num2" type="number" />
+        </p>
+        <p>
+            Text:
+            <input id="txt" type="text" />
+        </p>
+
+        <!-- 각 문제 풀이를 위한 버튼과 함수를 연결할 것 -->
+        <ul>
+            <!-- 1번 문제를 위한 버튼 -->
+            <li onclick="sol1()">#1</li>
+            <!-- 2번 문제를 위한 버튼 -->
+            <li onclick="sol2()">#2</li>
+            <!-- 3번 문제를 위한 버튼 -->
+            <li onclick="sol3()">#3</li>
+            <li onclick="sol4()">#4</li>
+            <li onclick="sol5()">#5</li>
+            <li onclick="sol6()">#6</li>
+            <li onclick="sol7()">#7</li>
+            <li onclick="sol8()">#8</li>
+            <li onclick="sol9()">#9</li>
+        </ul>
+        <div id="answer"></div>
+    </body>
+</html>

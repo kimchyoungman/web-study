@@ -1,0 +1,134 @@
+#containerWrap {
+    background: url(images/bg_contentwrap.png) repeat-y 0 0;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    width: 985px;
+    background: url(images/bg_content.png) no-repeat 0 top;
+    padding-bottom: 60px;
+    /* z-index: 1; */
+}
+
+#containersIndex {
+    width: 894px;
+    margin: 0 45px 0 45px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+div.index-01 {
+    float: left;
+    width: 894px;
+    min-height: 300px;
+    margin: 25px 0 0 0;
+    padding: 0;
+}
+
+.site-background-color {
+    background-color: #3b6695 !important;
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 12px 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid rgb(105, 105, 105);
+}
+
+#completecheck {
+    color: #fff;
+    background-color: rgba(135, 135, 135, 0.528);
+    border-radius: 3px;
+    width: 125px;
+    height: 30px;
+    font-weight: bolder;
+    border: none;
+}
+
+.header {
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+
+.header_com {
+    width: 150px;
+    display: flex;
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.header_com:nth-child(1) {
+    justify-content: start;
+}
+.header_com:nth-child(2) {
+    justify-content: center;
+}
+.header_com:nth-child(3) {
+    justify-content: end;
+}
+
+.body {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid rgba(135, 135, 135, 0.528);
+}
+
+.inquiry_all {
+    float: right;
+    margin-top: 75px;
+    padding-right: 205px;
+}
+
+#inquiry_text {
+    border: 1px solid rgb(105, 105, 105);
+    width: 130px;
+}
+
+#inquiry {
+    color: #fff;
+    background-color: rgba(135, 135, 135, 0.528);
+    border-radius: 3px;
+    width: 45px;
+    height: 20px;
+    font-weight: bolder;
+    border: none;
+}
+
+#radio_button {
+    padding-top: 10px;
+    font-weight: bold;
+    accent-color: rgb(0, 0, 0);
+    color: black;
+}
+
+.detail_text {
+    display: none;
+    background-color: #ececec;
+    border-radius: 5px;
+    border: #d1d1d1;
+    border-width: 5px;
+    height: 90px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.postPart {
+    display: none;
+}
+
+.textarea {
+    display: none;
+    width: 855px;
+    margin-bottom: 5px;
+}
+
+.submit_button {
+    display: none;
+    width: 60px;
+    height: 20px;
+}

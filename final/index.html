@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="final.css" />
+        <script>
+            window.onload = () => {
+                functions = [sol1, sol2, sol3, sol4, sol5, sol6, sol7, sol8];
+                let lis = document.querySelectorAll("ul li");
+                for (i = 0; i < functions.length; i++) {
+                    lis[i].addEventListener("click", functions[i]);
+                }
+                document
+                    .getElementById("submit")
+                    .addEventListener("click", sol9);
+                document
+                    .getElementById("clear")
+                    .addEventListener("click", sol10);
+
+                function sol1() {
+                    let number1 = Number(document.getElementById("num").value);
+                    let text = Number(document.getElementById("txt").value);
+                    if (number1 == text) {
+                        document.getElementById("head").innerHTML = "True";
+                    } else {
+                        document.getElementById("head").innerHTML = "False";
+                    }
+                }
+
+                function sol2() {
+                    let Num = Number(document.getElementById("num").value);
+                    let text = document.getElementById("txt").value;
+                    let answer = document.getElementById("list");
+
+                    for (let i = 0; i < Num; i++) {
+                        let li = document.createElement("li");
+                        li.innerHTML = text;
+                        li.style.justifyContent = "center";
+                        li.style.display = "flex";
+                        document.getElementById("list").appendChild(li);
+                    }
+                    document.getElementById("list").style.overflow = "scroll";
+                }
+
+                function sol3() {
+                    let text = document.getElementById("2").innerHTML;
+                    console.log(text);
+                    switch (text) {
+                        case "03":
+                            document.getElementById("0").innerHTML = "One";
+                            document.getElementById("1").innerHTML = "Two";
+                            document.getElementById("2").innerHTML = "Three";
+                            document.getElementById("3").innerHTML = "Four";
+                            document.getElementById("4").innerHTML = "Five";
+                            document.getElementById("5").innerHTML = "Six";
+                            document.getElementById("6").innerHTML = "Seven";
+                            document.getElementById("7").innerHTML = "Eight";
+                            break;
+                        case "Three":
+                            document.getElementById("0").innerHTML = "01";
+                            document.getElementById("1").innerHTML = "02";
+                            document.getElementById("2").innerHTML = "03";
+                            document.getElementById("3").innerHTML = "04";
+                            document.getElementById("4").innerHTML = "05";
+                            document.getElementById("5").innerHTML = "06";
+                            document.getElementById("6").innerHTML = "07";
+                            document.getElementById("7").innerHTML = "08";
+                    }
+                }
+
+                function sol4() {
+                    alert("sol4 clicked");
+                }
+
+                function sol5() {
+                    let text = document.getElementById("txt").value;
+                    let answer = document.getElementById("list");
+                    let li = document.createElement("li");
+                    li.innerHTML = text;
+                    li.style.justifyContent = "hidden";
+                    document.getElementById("list").appendChild(li);
+                    document.getElementById("list").style.display = "flex";
+                    document.getElementById("list").style.overflow = "hidden";
+                }
+            };
+
+            //         justify-content: center;
+            // display: flex;
+            // z-index: 10000;
+            // flex-wrap: wrap;
+
+            function sol6() {
+                let answer = document.getElementById("list");
+                answer.style.justifyContent = "center";
+                answer.style.flexWrap = "wrap";
+                answer.style.display = "flex";
+                for (let i = 0; i < 20; i++) {
+                    let img1 = document.createElement("img");
+                    let img2 = document.createElement("img");
+                    let img3 = document.createElement("img");
+                    let img4 = document.createElement("img");
+                    img1.id = "img1";
+                    img2.id = "img2";
+                    img3.id = "img3";
+                    img4.id = "img4";
+                    img1.style.width = "100px";
+                    img1.style.height = "100px";
+                    img2.style.width = "100px";
+                    img2.style.height = "100px";
+                    img3.style.width = "100px";
+                    img3.style.height = "100px";
+                    img4.style.width = "100px";
+                    img4.style.height = "100px";
+                    img1.src = "files/images/menu1.jpg";
+                    img2.src = "files/images/menu2.jpg";
+                    img3.src = "files/images/menu3.jpg";
+                    img4.src = "files/images/menu4.jpg";
+                    answer.appendChild(img1);
+                    answer.appendChild(img2);
+                    answer.appendChild(img3);
+                    answer.appendChild(img4);
+                    answer.style.zIndex = "10000";
+                    i++;
+                }
+
+                document
+                    .getElementById("img1")
+                    .addEventListener("click", function () {
+                        for (let i; i < 10; i++) {
+                            answer.removeChild(img1);
+                        }
+                    });
+            }
+
+            function sol7() {
+                alert("sol7 clicked");
+            }
+
+            let lorem =
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed id semper risus in hendrerit. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Cursus mattis molestie a iaculis at erat pellentesque adipiscing. Duis ultricies lacus sed turpis tincidunt id. Sodales ut etiam sit amet. Arcu ac tortor dignissim convallis aenean et tortor at. Augue interdum velit euismod in pellentesque massa. Nulla facilisi nullam vehicula ipsum a. Pellentesque habitant morbi tristique senectus et netus et malesuada. Blandit cursus risus at ultrices. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin. Tincidunt dui ut ornare lectus sit. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Consectetur purus ut faucibus pulvinar elementum integer enim neque. Egestas congue quisque egestas diam in arcu. Risus nec feugiat in fermentum posuere urna.";
+
+            function sol8() {
+                document.getElementById("list").innerHTML = lorem;
+            }
+
+            function sol9(e) {
+                let number1 = Number(document.getElementById("num").value);
+                let text = document.getElementById("txt").value;
+                let h1 = document.createElement("h1");
+                h1.innerHTML = number1 + " " + text;
+                let color = document.getElementById("col").value;
+                console.log(color);
+                h1.style.color = color;
+                document.getElementById("head").appendChild(h1);
+                document
+                    .getElementsByTagName("h1")[0]
+                    .addEventListener("onmouseover", function () {
+                        let date = document.getElementById("date").value;
+                    });
+            }
+
+            function sol10() {
+                let remove = document.getElementById("list");
+                let a = document.createElement("a");
+                a.innerHTML = "";
+                remove = a;
+                document.getElementById("list").appendChild(a);
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- Body 영역은 수정 불가 -->
+        <ul>
+            <li id="0">01</li>
+            <li id="1">02</li>
+            <li id="2">03</li>
+            <li id="3">04</li>
+            <li id="4">05</li>
+            <li id="5">06</li>
+            <li id="6">07</li>
+            <li id="7">08</li>
+            <li id="clear">Clear</li>
+        </ul>
+        <div id="head"></div>
+        <ul id="list"></ul>
+        <label for="txt">Text</label>
+        <input type="text" id="txt" required />
+        <label for="num">Number</label>
+        <input type="number" id="num" required />
+        <label for="col">Color</label>
+        <input type="color" id="col" required />
+        <label for="date">Date</label>
+        <input type="date" id="date" required />
+        <input type="button" id="submit" value="제출" />
+    </body>
+</html>

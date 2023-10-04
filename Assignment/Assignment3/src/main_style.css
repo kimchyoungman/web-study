@@ -1,0 +1,146 @@
+body {
+    height: 100%;
+    margin: 0;
+    /* 폰트 설정 */
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+#splash {
+    /* 뒤에 사진 배경을 위해 크기 픽셀 설정 및 사진 삽입 */
+    height: 800px;
+    background-image: url("cube_img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    /* 상단 네비게이션 바가 화면 전체를 채우게 한 후 투명도를 조절하여 검은색 바를 넣어줌 */
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    /* 네비게이션 바 항목들을 오른쪽 정렬 시킴 */
+    float: right;
+    margin-top: 10px;
+}
+
+nav li a {
+    /* 네비게이션 바 항목들 색 및 위치 조정 */
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-left: 0px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+nav .logo img {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#splash #main1 {
+    /* 배경 사진 중간에 존재하는 IISE 문자 설정 */
+    margin-top: 120px;
+    font-size: 64px;
+    font-weight: bold;
+    margin-left: 10px;
+    float: left;
+}
+
+#Department_Introduce {
+    padding: 30px 10px;
+}
+
+#Department_Introduce #introducetitle {
+    /* 학과 소개 제목 위치 및 폰트트 설정 */
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 32px;
+}
+
+#Curriculum {
+    padding: 30px 10px;
+}
+
+#Curriculum #currititle {
+    /* 학과 소개 제목 위치 및 폰트트크기설정 */
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 32px;
+}
+
+#Curriculum #curricontent {
+    /* 커리큘럼 사진 가운데 정렬을 위한 세팅 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Member {
+    padding: 20px 5px;
+    height: 771px;
+    overflow: hidden;
+}
+
+#Member #membertitle {
+    /* 구성원 소개 제목 위치 및 폰트 크기 설정 */
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 32px;
+}
+
+#Member #membercontent .member .img {
+    /* 구성원 사진 위치 조성 및 마커 제거 */
+    list-style: none;
+    float: left;
+    width: 290px;
+    height: 300px;
+}
+
+#Member #membercontent .member .img img {
+    /* 구성원 사진 크기 조정 */
+    width: 290px;
+    height: fit-content;
+}
+
+#Member #membercontent .member .text {
+    /* 구성원 소개 위치 및 크기 조절 */
+    list-style: none;
+    float: left;
+    margin-left: 10px;
+    font-size: 28px;
+    padding-right: 5px;
+    width: 430px;
+}
+
+#Map {
+    padding: 30px 10px;
+}
+
+#Map #maptitle {
+    /* 찾아오는 길 제목 위치 및 크기 설정 */
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 32px;
+}
+
+footer {
+    /* footer 색 설정 */
+    background-color: rgb(61, 61, 61);
+    color: #fff;
+}
+
+footer div {
+    /* footer 내부 컨텐츠 margin 설정 */
+    margin: 2px 20px;
+}

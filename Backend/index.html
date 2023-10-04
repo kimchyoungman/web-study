@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            label {
+                display: block;
+            }
+            label.inline {
+                display: inline;
+            }
+            textarea {
+                position: fixed;
+                right: 0px;
+                top: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="student" method="POST" action="/form">
+            <fieldset>
+                <legend>인적사항</legend>
+                <label for="sName">성명</label>
+                <input
+                    type="text"
+                    name="stuName"
+                    id="sName"
+                    autofocus
+                    required
+                />
+                <label for="sFirst">비밀번호</label>
+                <input type="password" name="stuFirst" id="sFirst" />
+                <label for="sBirth">생년월일</label>
+                <input type="date" name="stuBirth" id="sBirth" />
+            </fieldset>
+            <fieldset>
+                <legend>학력사항</legend>
+                <label for="sGrade">학년</label>
+                <input type="number" name="stuGrade" id="sGrade" />
+                <p style="margin: 0px">선호 직종</p>
+                <label class="inline"
+                    ><input
+                        type="checkbox"
+                        name="stuJob"
+                        value="web"
+                    />웹</label
+                >
+                <label class="inline"
+                    ><input
+                        type="checkbox"
+                        name="stuJob"
+                        value="mobile"
+                    />모바일</label
+                >
+                <label class="inline"
+                    ><input
+                        type="checkbox"
+                        name="stuJob"
+                        value="security"
+                    />보안</label
+                >
+                <label class="inline"
+                    ><input
+                        type="checkbox"
+                        name="stuJob"
+                        value="graphics"
+                    />그래픽스</label
+                >
+                <input type="hidden" name="hidden" value="숨겨진 값" />
+            </fieldset>
+            <input type="submit" value="전송" />
+        </form>
+        <!-- <img src="img/test.jpg" /> -->
+    </body>
+</html>

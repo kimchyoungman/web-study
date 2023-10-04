@@ -1,0 +1,42 @@
+/* CSS 파일은 수정 불가 */
+
+ul {
+    padding: 0px;
+
+}
+body {
+    width:800px;
+}
+ul li {
+    display: inline-block;
+    border: solid black 1px;
+    margin: 3px;
+    padding: 5px;
+
+}
+
+#list {
+    border: black solid;
+    height: 300px;    
+   
+}
+
+#list li {
+    border: 1px black solid;
+    display: block;
+    margin: 0px;
+}
+
+#clear {
+    float:right;
+}
+
+div {
+    border-top:solid black 1px;
+    border-bottom:solid black 1px;    
+    text-align:center;
+    height:50px;
+    width:800px;
+    display:table-cell;
+    vertical-align: middle;    
+}

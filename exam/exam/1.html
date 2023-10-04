@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            /* 주어진 스타일의 변경/추가/삭제 불가능  */
+            /* 스타일 추가가 필요할 경우 인라인 스타일만 활용 가능 */
+            table,
+            th,
+            td {
+                border-collapse: collapse;
+                border: black solid 1px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>주소</th>
+                    <td colspan="2">
+                        서울특별시 노원구 공릉로 232 프론티어관 501호
+                    </td>
+                </tr>
+                <tr>
+                    <th>항목</th>
+                    <th>내용</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>지원동기</td>
+                    <td>돈을 벌기 위하여</td>
+                    <td rowspan="3" style="text-align: center">없음</td>
+                </tr>
+
+                <tr>
+                    <td>입사후포부</td>
+                    <td>돈을 벌 것이다</td>
+                </tr>
+
+                <tr>
+                    <td>특기/취미</td>
+                    <td>지원서 작성</td>
+                </tr>
+            </tbody>
+            <td colspan="3" style="text-align: center">
+                <b>각오:</b> 열심히 하겠습니다!
+            </td>
+            <tfoot></tfoot>
+        </table>
+    </body>
+</html>

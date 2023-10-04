@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      label {
+        display: block;
+      }
+      label.inline {
+        display: inline;
+      }
+      textarea {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+      }
+    </style>
+    <script src="web.js"></script>
+  </head>
+
+  <body>
+    <form name="student" method="GET">
+      <fieldset>
+        <legend>인적사항</legend>
+        <label for="sName">성명</label>
+        <input type="text" name="stuName" id="sName" autofocus required />
+        <label for="sPassword">비밀번호</label>
+        <input type="password" name="stuPassword" id="sPassword" />
+        <label for="sHome">홈페이지</label>
+        <input type="url" name="stuHome" id="sHome" value="http://" />
+        <label for="sMail">이메일</label>
+        <input type="email" name="stuMail" id="sMail" placeholder="x@y.z" />
+        <label for="sTel">전화번호</label>
+        <input type="tel" name="stuTel" id="sTel" autocomplete="on" />
+        <label for="sLocation">지역</label>
+        <input
+          type="text"
+          name="stuLocation"
+          id="sLocation"
+          list="local_list"
+          disabled
+        />
+        <datalist id="local_list">
+          <option value="서울"></option>
+          <option value="경기"></option>
+          <option value="서산"></option>
+          <option value="주례"></option>
+        </datalist>
+        <label for="sBirth">생년월일</label>
+        <input type="date" name="stuBirth" id="sBirth" />
+        <label for="sSleep">기상시간</label>
+        <input type="time" name="stuSleep" id="sSleep" />
+        <label for="sColor">선호색상</label>
+        <input type="color" name="stuColor" id="sColor" />
+      </fieldset>
+
+      <fieldset>
+        <legend>학력사항</legend>
+        <label for="sUniv">학교</label>
+        <input type="text" name="stuUniv" id="sUniv" />
+        <label for="sGrade">학년</label>
+        <input type="number" name="stuGrade" id="sGrade" />
+        <label for="sGPA">성적 평점</label>
+        0
+        <input
+          type="range"
+          name="stuGPA"
+          id="sGPA"
+          min="0"
+          max="4.5"
+          step="0.5"
+        />
+        4.5
+        <p style="margin: 0px">선호언어</p>
+        <label class="inline">
+          <input type="radio" name="stuLang" value="C" />C
+        </label>
+        <label class="inline">
+          <input type="radio" name="stuLang" value="C#" />C#
+        </label>
+        <label class="inline">
+          <input type="radio" name="stuLang" value="Java" />Java
+        </label>
+        <label class="inline">
+          <input type="radio" name="stuLang" value="Python" />Python
+        </label>
+        <p style="margin: 0px">선호직종</p>
+        <label class="inline">
+          <input type="checkbox" name="stuJob" value="web" />모바일
+        </label>
+        <label class="inline">
+          <input type="checkbox" name="stuJob" value="mobile" />웹
+        </label>
+        <label class="inline">
+          <input type="checkbox" name="stuJob" value="security" />보안
+        </label>
+        <label class="inline">
+          <input type="checkbox" name="stuJob" value="graphics" />그래픽스
+        </label>
+      </fieldset>
+      <input type="submit" value="전송" />
+      <input type="reset" value="초기화" />
+      <input
+        type="image"
+        src="https://iise.seoultech.ac.;kr/hcm/design/layout2022/a/res/img/logo.png"
+      />
+      <input type="button" value="경고" onclick="alert('Do not click!')" />
+      <button type="button">
+        <img
+          src="https://iise.seoultech.ac.;kr/hcm/design/layout2022/a/res/img/logo.png"
+        />
+        <br />
+        <strong>very very big button</strong>
+      </button>
+      <label for="stuProf">선호교수</label>
+      <select id="stuProf" size="5">
+        <optgroup label="산업공학과">
+          <option value="정진우">정진우</option>
+          <option value="황상흠">황상흠</option>
+          <option value="심재웅">심재웅</option>
+        </optgroup>
+      </select>
+    </form>
+
+    <textarea
+      cols="50"
+      rows="30"
+      placeholder="여기에 문자열을 입력하세요"
+    ></textarea>
+  </body>
+</html>

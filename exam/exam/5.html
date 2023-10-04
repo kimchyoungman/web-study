@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            div {
+                border: solid black 1px;
+                box-sizing: border-box;
+                width: 500px;
+                height: 500px;
+                background-color: beige;
+            }
+            .right {
+                position: relative;
+                margin-top: -300px;
+                margin-left: 200px;
+                z-index: 1;
+            }
+
+            div.child {
+                width: 250px;
+                height: 250px;
+                background-color: skyblue;
+                position: relative;
+            }
+            .child:nth-child(1) {
+                left: 40px;
+                top: 20px;
+            }
+            .child:nth-child(2) {
+                left: 70px;
+                top: -185px;
+            }
+
+            .child:nth-child(3) {
+                left: 100px;
+                top: -390px;
+            }
+
+            .child:nth-child(4) {
+                left: 130px;
+                top: -575px;
+            }
+
+            div:hover {
+                background-color: pink;
+                z-index: 1000;
+            }
+
+            div.child:hover {
+                transform: rotate(-0.125turn);
+                z-index: 1000;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- body 안의 영역은 수정 불가 -->
+        <div class="left">
+            div.left
+            <div class="child one">child.one</div>
+            <div class="child two">child.two</div>
+            <div class="child three">child.three</div>
+        </div>
+        <div class="right">
+            div.right
+            <div class="child one">child.one</div>
+            <div class="child two">child.two</div>
+            <div class="child three">child.three</div>
+            <div class="child four">child.four</div>
+        </div>
+    </body>
+</html>

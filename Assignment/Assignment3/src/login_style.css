@@ -1,17 +1,43 @@
 fieldset {
-    width: 700px;
+    /* 폰트 설정 */
+    font-family: "Poppins", sans-serif;
+    width: 300px;
     height: auto;
     margin: auto;
+    /* 로그인 창 위치를 가운데로 설정  */
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* 박스 모양을 둥글게 만들기 위해 설정 */
     border-radius: 25px;
 }
-
-fieldset .Login {
-    float: right;
-    cursor: pointer;
-    margin: -43px 0px 0 0px;
+#input {
+    width: 200px;
 }
 
+#btn {
+    /* 버튼 크기 및 위치 설정 */
+    float: right;
+    position: relative;
+    height: 100px;
+}
+/* 로그인 버튼 폰트 번경 */
+#submitBtn {
+    font-family: "Poppins", sans-serif;
+    float: right;
+    top: 1px;
+    height: 90px;
+    margin-left: 20px;
+}
+/* 로그인 input과 btn위치 설정을 위해 상위 wrapper 생성 및 가운데 정렬 */
+.form_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* input과 label 부분 block으로 설정 */
+.form_wrapper label,
+.form_wrapper input {
+    display: block;
+}

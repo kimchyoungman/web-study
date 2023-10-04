@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="english">
+    <head>
+        <link rel="stylesheet" type="text/css" href="main_style.css"></link>
+        <link rel="stylesheet" type="text/css" href="container_style.css"></link>
+        <link rel="stylesheet" type="text/css" href="body_style.css"></link>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="server.js"></script>
+    </head>
+
+    <body>
+        <div id="wrap">
+<!-- 헤드 부분 구현 -->
+            <div id="headerWrap">
+                <div id="header">
+                    <h1 class="h_ko">
+                        <img
+                            id="logo_img"
+                            src="/images/logo.gif?v=20230207"
+                            alt="e-class system"
+                        />
+                    </h1>
+<!-- 헤드 우측 조회 칸 구현 -->
+                    <div class="inquiry_all">
+                        <div>
+                            <input type="text" id="inquiry_text">
+                            <button  id="inquiry" class="button">조회</button>
+                        </div>
+                        <div id="radio_button">
+                            <input type='radio' name='Select_opt' value='Subject' />과목명
+                            <input type='radio' name='Select_opt' value='Task_Name' />과제명
+                        </div> 
+                        
+                    </div>
+                </div>
+<!-- 헤드 하단 교육현황 커뮤니티 소개 탭 구현 -->
+            <div id="gnb" style="height: 61px;">
+                <div id="gnbIndex">
+                    <ul id="top1menu" style="margin-left: 216px; width: 543px">
+                        <li style="overflow: hidden">
+                            <div class="gnb-top-class" id="top1m1" onclick="pageGo('https/eclass.seoultech.ac.kr/ilos/st/main/course_ing_list_form.acl'); return false;">
+                                <div class="gnb-top-class-off">
+                                    <a href="https://eclass.seoultech.ac.kr/ilos/st/main/course_ing_list_form.acl">교육현황</a>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="space">
+                            <div class="gnb-top-class" id="top1m1" onclick="pageGo('https/eclass.seoultech.ac.kr/ilos/community/notice_list_form.acl'); return false;">
+                                <div class="gnb-top-class-off">
+                                    <a href="https://eclass.seoultech.ac.kr/ilos/community/notice_list_form.acl">커뮤니티</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="space">
+                            <div class="gnb-top-class" id="top1m1" onclick="pageGo('https/eclass.seoultech.ac.kr/ilos/introduce/introduce.acl'); return false;">
+                                <div class="gnb-top-class-off">
+                                    <a href="https://eclass.seoultech.ac.kr/ilos/introduce/introduce.acl">소개</a>
+                                </div>
+                            </div>
+                        </li>    
+                    </ul>
+                </div> 
+            </div>
+        </div>
+<!-- body 부분 구현 -->
+        <div id="containerWrap">
+            <div id="container">
+                <div id="containersIndex">
+                    <div class="index-01">
+<!-- body 부분 상단 파란색 바 부분 구현 -->
+                        <div class = "header">
+                            <div class="site-background-color">
+                                <div class = "header_com">일정</div>
+                                <div class= "header_com">2023.05</div>
+                                <button id="completecheck" >완료 과제 조회</button>
+                        </div>
+                    </div>
+
+                        <div class=" body">
+                            <ul id="result"></ul>
+                            <div>
+
+                            </div>
+
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+
+//  데이터 로드
+function loadData(url) {
+    fetch(url)  
+        .then(response => response.json())
+        .then(data => {
+            const ul = document.getElementById('result');
+            ul.innerHTML = '';
+
+            for (let i = 0; i < data.length; i++) {
+                createAssignmentItem(data[i], ul, i);
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+// 과제에 따른 UI 생성
+function createAssignmentItem(item, ul, i) {
+
+    //  각 과제마다 li이 생성하도록 설정
+    const li = document.createElement('li');
+    li.classList.add('content');
+
+    // 기본적으로 생성되는 ui를 보여주는 div 생성
+    const defaultView = document.createElement('div');
+    defaultView.classList.add('default_view');
+
+    //  상세 관련 내용이 있는 div 생성
+    const detailText = document.createElement('div');
+    detailText.classList.add('detail_text');
+    detailText.setAttribute('id', `detailText${i}`);
+    detailText.textContent = item.Details
+
+    // 작성 관련 div 생성
+    const postPart = document.createElement('div');
+    postPart.classList.add('post_part');
+    postPart.setAttribute('id', `post_part${i}`);
+    postPart.textContent = ""
+
+    // 과제 작성 textarea 생성
+    const textarea = document.createElement('textarea');
+    textarea.setAttribute('id', `textarea${i}`);
+    textarea.classList.add('textarea');
+    textarea.placeholder = '과제를 작성하세요';
+
+    // 과제명 span 생성
+    const taskName = document.createElement('span');
+    taskName.classList.add('task-name');
+    taskName.textContent = item.taskName;
+
+    // 과제 제출 버튼 생성
+    const submit_button = document.createElement('button');
+    submit_button.setAttribute('id', `submit_button${i}`);
+    submit_button.classList.add('submit_button');
+    submit_button.textContent = "제출"
+
+// 과제 제출 시 json 파일의 submit 값과 submit details 값을 변경해주도록 함
+
+    submit_button.addEventListener('click', () => {
+  const content = textarea.value;
+
+  const submit_data = {
+    submit: "Y",
+    submit_details: content
+  };
+
+  const taskName = item.taskName;
+  const url = `http://localhost:3000/taskName/${encodeURIComponent(taskName)}`;
+
+  patchData(url, 'PATCH', submit_data);
+});
+
+//  화면 우측 버튼 및 문자 div 생성
+    const detail = document.createElement('div');
+    detail.classList.add('detail');
+
+    const detailWrapper = document.createElement('div');
+    detailWrapper.classList.add('detail-wrapper');
+
+    // 버튼을 모아놓은 div 생성
+    const buttonWrapper = document.createElement('div');
+    buttonWrapper.classList.add('button-wrapper');
+
+        // 상세 버튼 생성
+    const detailButton = document.createElement('button');
+    detailButton.classList.add('button');
+    detailButton.setAttribute('id', `detailButton${i}`);
+    detailButton.textContent = '상세';
+
+    // 상세 버튼 클릭시 상세 내역이 나올수있도록 해줌
+    detailButton.addEventListener('click', () => {
+    detailText.style.display = detailText.style.display === 'none' ? 'block' : 'none';
+});
+
+// 작성 버튼 생성
+    const postButton = document.createElement('button');
+    postButton.classList.add('button');
+    postButton.setAttribute('id', `postButton${i}`);
+    postButton.textContent = '작성';
+
+        // 작성 버튼 클릭시 작성창이 나올수있도록 해줌
+    postButton.addEventListener('click', () => {
+        textarea.style.display = textarea.style.display === 'none' ? 'block' : 'none';
+        submit_button.style.display = submit_button.style.display === 'none' ? 'block' : 'none';
+});
+
+// 수업명
+    const subject = document.createElement('span');
+    subject.classList.add('subject');
+    subject.textContent = item.subject;
+// 교수명
+    const professor = document.createElement('span');
+    professor.classList.add('professor');
+    professor.textContent = item.professor;
+// 마감일
+    const deadline = document.createElement('span');
+    deadline.classList.add('deadline');
+    deadline.textContent = item.deadline;
+
+    detailWrapper.appendChild(subject);
+    detailWrapper.appendChild(professor);
+    detailWrapper.appendChild(deadline);
+
+    buttonWrapper.appendChild(detailButton);
+    buttonWrapper.appendChild(postButton);
+    
+    postPart.appendChild(textarea);
+    postPart.appendChild(submit_button);
+
+    detail.appendChild(buttonWrapper);
+    detail.appendChild(detailWrapper);
+
+    defaultView.appendChild(taskName);
+    defaultView.appendChild(detail);
+
+    li.appendChild(defaultView);
+    li.appendChild(detailText);
+    li.appendChild(postPart);
+
+    ul.appendChild(li);
+}
+
+
+// 전체 미해결 과제 조회
+document.addEventListener('DOMContentLoaded', () => {
+    const url = "http://localhost:3000/";
+    loadData(url);
+});
+
+// 검색
+document.getElementById('inquiry').addEventListener('click', () => {
+    const selectedOption = document.querySelector('input[name="Select_opt"]:checked').value;
+    const searchText = document.getElementById('inquiry_text').value;
+    const url = `http://localhost:3000/UnslovedAssignment?selectedOption=${selectedOption}&searchText=${searchText}`;
+    loadData(url);
+});
+
+
+
+
+// 데이터 수정
+function patchData(url, method, data) {
+  const options = {
+    method: method,
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data) 
+};
+
+fetch(url, options)
+    .then((response) => response.json())
+    .then((data) => {
+    })
+    .catch((error) => {
+    //   console.error("오류가 발생했습니다:", error);
+    });
+}
+// 완료 데이터 조회
+
+
+document.getElementById('completebutton').addEventListener("click", () => {
+    const url = "http://localhost:3000/submitAssignment";
+    loadData(url);
+});
+
+
+
+            </script>
+    </body>
+
+</html>

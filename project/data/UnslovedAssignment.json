@@ -1,0 +1,102 @@
+[
+  {
+    "index": 0,
+    "subject": "웹프로그래밍",
+    "professor": "정진우 교수님",
+    "taskName": "[과제] 미니프로젝트",
+    "Details": "미니 프로젝트!",
+    "deadline": "2023-06-04",
+    "submit": "Y",
+    "submit_details": "완료"
+  },
+  {
+    "index": 1,
+    "subject": "웹프로그래밍",
+    "professor": "정진우 교수님",
+    "taskName": "[과제] 과제 1",
+    "Details": "과제를 해보아요",
+    "deadline": "2023-06-05",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 2,
+    "subject": "데이터베이스",
+    "professor": "권혁윤 교수님",
+    "taskName": "[과제 1] SQL1",
+    "Details": "마감기간을 잘 지켜주세요",
+    "deadline": "2023-03-24",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 3,
+    "subject": "데이터베이스",
+    "professor": "권혁윤 교수님",
+    "taskName": "[과제 2] SQL2",
+    "Details": "마감기간을 잘 지켜주세요",
+    "deadline": "2023-05-05",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 4,
+    "subject": "딥러닝",
+    "professor": "황상흠 교수님",
+    "taskName": "[과제] HW1",
+    "Details": "첫번째 숙제입니다. 제출마감일은 29일 수요일입니다.",
+    "deadline": "2023-03-29",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 5,
+    "subject": "딥러닝",
+    "professor": "황상흠 교수님",
+    "taskName": "[과제] HW2",
+    "Details": "제출일은 4월 5일 자정까지입니다.",
+    "deadline": "2023-06-05",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 6,
+    "subject": "데이터마이닝",
+    "professor": "심재웅 교수님",
+    "taskName": "[과제] 과제 1",
+    "Details": "실습 과제 입니다. 첨부 파일 꼼꼼히 읽고 제출해주세요.기한 확인해주시고, 지각제출 없습니다.",
+    "deadline": "2023-03-13",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 7,
+    "subject": "데이터마이닝",
+    "professor": "심재웅 교수님",
+    "taskName": "[과제] 과제 2",
+    "Details": "실습 과제 입니다. 첨부 파일 꼼꼼히 읽고 제출해주세요.기한 확인해주시고, 지각제출 없습니다.",
+    "deadline": "2023-04-03",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 8,
+    "subject": "기술과경영",
+    "professor": "이학연 교수님",
+    "taskName": "[과제] 자기소개서",
+    "Details": "첨부한 템플릿을 이용해서 작성 후 제출하기 바랍니다.",
+    "deadline": "2023-03-06",
+    "submit": "N",
+    "submit_details": ""
+  },
+  {
+    "index": 9,
+    "subject": "기술과경영",
+    "professor": "이학연 교수님",
+    "taskName": "[과제] 테크 스타트업 비즈니스 플랜",
+    "Details": "테크 스타트업 창업을 위한 사업계획서를 작성함으로써, 본 과목을 통해 습득한 기술경영의 다양한 주제를 종합적으로 활용",
+    "deadline": "2023-06-05",
+    "submit": "N",
+    "submit_details": ""
+  }
+]

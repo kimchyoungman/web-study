@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+
+        <script>
+            window.onload = () => {
+                let menus = document.querySelectorAll("ul li");
+                for (var i = 0; i < 3; i++) {
+                    menus[i].onclick = getRequest;
+                }
+            };
+
+            function getRequest(event) {
+                console.log("called", event.target.id);
+                fetch("/ajax/" + event.target.id)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        let elem = document.createElement("li"); //li요소 생성
+                        elem.innerHTML = data;
+                        document.getElementById("list").appendChild(elem);
+                        elem.onclick = () => {
+                            vex.dialog.alert(elem.innerText);
+                        };
+                    });
+            }
+        </script>
+        <style>
+            ul {
+                padding: 0px;
+                overflow: auto;
+            }
+            ul li {
+                display: inline-block;
+                border: solid black 1px;
+                margin: 3px;
+                padding: 5px;
+            }
+            #list {
+                border: black solid;
+                height: 300px;
+            }
+            #list li {
+                border: 1px black solid;
+                display: block;
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li id="0">First</li>
+            <li id="1">Second</li>
+            <li id="2">Third</li>
+        </ul>
+        <ul id="list"></ul>
+        <label for="position">위치</label>
+        <input type="number" name="position" id="position" required />
+        <label for="contents">내용</label>
+        <input type="text" name="contents" id="contents" required />
+        <input type="button" id="submit" value="전송" />
+    </body>
+</html>

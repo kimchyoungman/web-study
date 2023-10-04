@@ -1,0 +1,70 @@
+#result {
+    padding-left: 10px;
+    list-style-type: disc;
+}
+
+.content {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: dashed rgba(98, 97, 97, 0.384) 1px;
+    width: 97%;
+    font-size: 14px;
+    font-size: 14px;
+    padding: 0px 0px 10px;
+}
+
+.default_view{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.task-name {
+    flex: 1;
+    margin-right: 10px;
+    font-size: 16px;
+    margin-right: 5px; 
+}
+
+.task-name::before  {
+    flex: 1;
+    margin-right: 10px;
+    font-size: 16px;
+    content: "•"; 
+    margin-right: 5px; 
+    color: green;
+}
+
+.button {
+    margin: 0px 3px 5px;
+    width: 60px;
+    color: #fff;
+    background-color: rgba(135, 135, 135, 0.528);
+    border-radius: 3px;
+    font-weight: bolder;
+    border: none;
+    height: 25px;
+}
+
+.subject {
+    flex: 1;
+    margin-left: 10px;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.professor {
+    padding-right: 10px;
+}
+
+.detail-button {
+    margin-bottom: 5px;
+    text-align: right;
+}
